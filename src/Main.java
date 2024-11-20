@@ -12,15 +12,15 @@ public class Main
         DataReader readData = new DataReader();
         DisplayData displayData = new DisplayData();
 
-        String path = "Data\\TwoDData_02_long.txt";
+        String path = "Data\\ThreeDData_randomInt.txt ";
         File file = new File(path);
         //tester.readAndPrintData(path);
 
-        double [][] twoDdata = readData.read2Ddata(file);
-        displayData.displayTwoD(twoDdata);
+        double [][] threeDdata = readData.generate3dData(100000);
+        displayData.displayColor(threeDdata);
 
 
-        for(double [] out : twoDdata)
+        for(double [] out : threeDdata)
         {
             System.out.println(Arrays.toString(out));
         }

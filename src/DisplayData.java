@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.ArrayList;
 
 public class DisplayData {
@@ -5,6 +6,43 @@ public class DisplayData {
     public DisplayData()
     {
 
+    }
+    public void displayColor(double [][] out)
+    {
+        int width = 1920;
+        int height = 1080;
+
+        StdDraw.setCanvasSize(width, height);
+        StdDraw.setXscale(0, width);
+        StdDraw.setYscale(height, 0);
+
+        for (int i = 0; i < out[0].length; i++)
+        {
+            Color color = new Color((int) out[2][i], (int) out[3][i], (int) out[4][i]);
+            double y = out[1][i];
+            double x = out[0][i];
+            StdDraw.setPenColor(color);
+            StdDraw.filledCircle(x, y, 5);
+        }
+    }
+
+    public void displayThreeD(double [][] out)
+    {
+        int width = 1000;
+        int height = 500;
+
+        StdDraw.setCanvasSize(width, height);
+        StdDraw.setXscale(0, width);
+        StdDraw.setYscale(height, 0);
+
+        for (int i = 0; i < out[0].length; i++)
+        {
+            Color color = new Color((int) out[2][i], (int) out[2][i], (int) out[2][i]);
+            double y = out[1][i];
+            double x = out[0][i];
+            StdDraw.setPenColor(color);
+            StdDraw.filledCircle(x, y, 3);
+        }
     }
 
     public void displayTwoD(double [][] out)

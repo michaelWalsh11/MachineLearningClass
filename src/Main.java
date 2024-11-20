@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main
@@ -11,19 +12,21 @@ public class Main
         DataReader readData = new DataReader();
         DisplayData displayData = new DisplayData();
 
-        String path = "Data\\OneDData_02_short.txt";
+        String path = "Data\\TwoDData_02_long.txt";
         File file = new File(path);
-        tester.readAndPrintData(path);
+        //tester.readAndPrintData(path);
 
-        ArrayList<Double> oneDdata = readData.read1Ddata(file);
-        displayData.displayOneD(oneDdata);
+        double [][] twoDdata = readData.read2Ddata(file);
+        displayData.displayTwoD(twoDdata);
 
-        for (double num : oneDdata)
+
+        for(double [] out : twoDdata)
         {
-            System.out.println(num);
+            System.out.println(Arrays.toString(out));
         }
 
-        tester.testDrawing();
+
+        //tester.testDrawing();
 
     }
 }

@@ -16,8 +16,8 @@ public class DataReader
 
         for (int i = 0; i < numbers[0].length; i++)
         {
-            numbers[0][i] = (int)((Math.random() * 1920) + 1);
-            numbers[1][i] = (int)((Math.random() * 1080) + 1);
+            numbers[0][i] = (int)((Math.random() * 800) + 1);
+            numbers[1][i] = (int)((Math.random() * 600) + 1);
             numbers[2][i] = (int)((Math.random() * 255) + 1);
             numbers[3][i] = (int)((Math.random() * 255) + 1);
             numbers[4][i] = (int)((Math.random() * 255) + 1);
@@ -113,6 +113,4 @@ public class DataReader
         }
         return output;
     }
-
-
 }

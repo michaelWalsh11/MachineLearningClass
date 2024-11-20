@@ -1,22 +1,18 @@
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        Tester_00 tester = new Tester_00();
         DataReader readData = new DataReader();
         DisplayData displayData = new DisplayData();
 
-        String path = "Data\\ThreeDData_randomInt.txt ";
+        String path = "Data\\ThreeDData_02.txt ";
         File file = new File(path);
-        //tester.readAndPrintData(path);
+        //file.notify();
 
-        double [][] threeDdata = readData.generate3dData(100000);
+        double [][] threeDdata = readData.read3Ddata(file);
         displayData.displayColor(threeDdata);
 
 
@@ -24,9 +20,6 @@ public class Main
         {
             System.out.println(Arrays.toString(out));
         }
-
-
-        //tester.testDrawing();
 
     }
 }
